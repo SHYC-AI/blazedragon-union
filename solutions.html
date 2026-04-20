@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solutions | BLAZEDRAGON UNION</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F4D03F;
+            --gold-dark: #B8860B;
+            --black: #0A0A0A;
+            --black-light: #111111;
+            --black-lighter: #1A1A1A;
+            --white: #FFFFFF;
+            --gray: #888888;
+            --gray-dark: #444444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.7;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a.active { color: var(--gold); }
+
+        .hero-section {
+            padding: 12rem 5% 6rem;
+            background: var(--black-light);
+            text-align: center;
+            border-bottom: 1px solid var(--gray-dark);
+        }
+
+        .hero-section h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--white);
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-section h2 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--gold);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-section p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .solution-section {
+            padding: 6rem 5%;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .pillar-card {
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, var(--black-lighter), var(--black-light));
+            border: 1px solid var(--gray-dark);
+            border-radius: 12px;
+            transition: all 0.4s ease;
+        }
+
+        .pillar-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .pillar-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .pillar-card h5 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .pillar-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        .subsection {
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid var(--gray-dark);
+        }
+
+        .subsection h5 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: var(--black);
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid var(--gray-dark);
+        }
+
+        footer p { color: var(--gray); font-size: 0.9rem; }
+        footer a { color: var(--gold); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">BLAZEDRAGON</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="solutions.html" class="active">Solutions</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero-section">
+        <h1>Solutions</h1>
+        <h2>Global Distribution & Publishing Excellence</h2>
+        <p>Full-stack solutions for digital growth on a global scale.</p>
+    </header>
+
+    <!-- Regional Specialization -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>Global Reach</h3>
+                <h4>Regional Specialization & Localized Growth</h4>
+                <p>We bridge the gap between global technology and regional cultural nuances.</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🌏</div>
+                    <h5>APAC Strategic Hub</h5>
+                    <p>Direct market entry and localization for high-barrier regions. We operate specialized curation platforms like Zinetimes to master the intricate consumer behavior of the Japanese market, ensuring high-fidelity cultural alignment for every campaign.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🌍</div>
+                    <h5>EMEA & Global Markets</h5>
+                    <p>Comprehensive distribution strategies tailored for diverse regulatory environments. We ensure full compliance with international data standards (GDPR/CCPA) while scaling digital properties across Europe and the Americas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game & App Publishing -->
+    <section class="solution-section" style="background: var(--black-light);">
+        <div class="container">
+            <div class="section-header">
+                <h3>Publishing</h3>
+                <h4>Integrated Game & App Publishing</h4>
+                <p>A full-lifecycle publishing engine designed for sustainable scale.</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">📈</div>
+                    <h5>Global User Acquisition (UA)</h5>
+                    <p>Data-centric marketing across premium ad networks. We execute multi-channel growth strategies using sophisticated cohort analysis to identify and acquire high-LTV (Lifetime Value) users globally.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🔍</div>
+                    <h5>Holistic Store Optimization (ASO)</h5>
+                    <p>Beyond keyword indexing. We optimize the entire conversion funnel—from localized metadata and visual assets to rating management—maximizing organic uplift and reducing blended CPI.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">⚡</div>
+                    <h5>LiveOps & Product Lifecycle</h5>
+                    <p>Continuous operational excellence. Our team manages in-app events, economy balancing, and version updates to ensure long-term retention and maximized monetization potential.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">🎯</div>
+                    <h5>Marketing & Brand Positioning</h5>
+                    <p>Crafting compelling narratives. We handle global PR, creative production, and community management to build strong brand identities for every title in our portfolio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Performance Marketing -->
+    <section class="solution-section">
+        <div class="container">
+            <div class="section-header">
+                <h3>Technology</h3>
+                <h4>Performance Marketing & Growth Technology</h4>
+                <p>Automating the complexity of modern advertising.</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🤖</div>
+                    <h5>Programmatic Campaign Management</h5>
+                    <p>Managing a massive portfolio of 50+ digital properties requires more than manual effort. We deploy proprietary automation frameworks to handle large-scale bidding, real-time creative rotation, and cross-platform synchronization.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">📊</div>
+                    <h5>Advanced Data Intelligence</h5>
+                    <p>Our internal data warehouse provides granular insights into cross-channel attribution. By visualizing real-time ROAS and conversion funnels, we enable agile decision-making at the speed of the market.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Media -->
+    <section class="solution-section" style="background: var(--black-light);">
+        <div class="container">
+            <div class="section-header">
+                <h3>Media</h3>
+                <h4>Digital Media & Content Distribution</h4>
+                <p>Niche-focused platforms for high-intent audiences.</p>
+            </div>
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon">🌐</div>
+                    <h5>Vertical-Specific Portals</h5>
+                    <p>Operating a robust network of specialized web platforms, including AIHubly and EduJobly. We curate high-value content that attracts intent-driven users, providing a stable foundation for long-term organic growth.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon">💰</div>
+                    <h5>Strategic Monetization Ecosystem</h5>
+                    <p>A diversified approach to revenue. From affiliate partnerships to programmatic ad placements, we optimize the monetization stack of every web and app asset for maximum yield.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 <a href="index.html">BLAZEDRAGON UNION INTERACTIVE ENTERTAINMENT LIMITED</a>. All rights reserved.</p>
+    </footer>
+</body>
+</html>

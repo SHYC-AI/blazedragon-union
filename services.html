@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | BLAZEDRAGON UNION</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --gold: #D4AF37;
+            --gold-light: #F4D03F;
+            --gold-dark: #B8860B;
+            --black: #0A0A0A;
+            --black-light: #111111;
+            --black-lighter: #1A1A1A;
+            --white: #FFFFFF;
+            --gray: #888888;
+            --gray-dark: #444444;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.7;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--gold);
+            text-decoration: none;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--gray);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: var(--gold); }
+        .nav-links a.active { color: var(--gold); }
+
+        .page-header {
+            padding: 10rem 5% 4rem;
+            background: var(--black-light);
+            border-bottom: 1px solid var(--gray-dark);
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .page-header p {
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 5rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, var(--black-lighter), var(--black-light));
+            border: 1px solid var(--gray-dark);
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+        }
+
+        .service-card h3 {
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--gray);
+            font-size: 0.95rem;
+        }
+
+        footer {
+            background: var(--black);
+            padding: 3rem 5%;
+            text-align: center;
+            border-top: 1px solid var(--gray-dark);
+        }
+
+        footer p { color: var(--gray); font-size: 0.9rem; }
+        footer a { color: var(--gold); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">BLAZEDRAGON</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="services.html" class="active">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-service.html">Terms of Service</a></li>
+        </ul>
+    </nav>
+
+    <header class="page-header">
+        <h1>Our Services</h1>
+        <p>Comprehensive digital entertainment solutions across the globe</p>
+    </header>
+
+    <section class="services-grid">
+        <div class="service-card">
+            <div class="service-icon">🎮</div>
+            <h3>Game Publishing</h3>
+            <p>Global publishing and distribution of mobile games and interactive entertainment across iOS, Android, and web platforms.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🚀</div>
+            <h3>User Acquisition</h3>
+            <p>Data-driven user acquisition campaigns leveraging Google Ads, social platforms, and targeted advertising networks.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🔧</div>
+            <h3>Tech Development</h3>
+            <p>In-house R&D and application development, building proprietary tools and automated frameworks for performance optimization.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🌏</div>
+            <h3>Global Operations</h3>
+            <p>24/7 operations with regional expertise across APAC, Europe, and the Americas, navigating local market dynamics.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h3>Analytics & Insights</h3>
+            <p>Comprehensive analytics dashboards and user behavior insights to optimize engagement and maximize lifetime value.</p>
+        </div>
+        <div class="service-card">
+            <div class="service-icon">🤝</div>
+            <h3>Partnership & Licensing</h3>
+            <p>Strategic partnerships, IP licensing, and cross-promotion opportunities within the digital entertainment ecosystem.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 <a href="index.html">BLAZEDRAGON UNION INTERACTIVE ENTERTAINMENT LIMITED</a>. All rights reserved.</p>
+    </footer>
+</body>
+</html>
