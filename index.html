@@ -13,6 +13,7 @@
             --gold: #D4AF37;
             --gold-light: #F4D03F;
             --gold-dark: #B8860B;
+            --gold-dim: rgba(212, 175, 55, 0.55);
             --black: #0A0A0A;
             --black-light: #111111;
             --black-lighter: #1A1A1A;
@@ -380,11 +381,33 @@
             margin: 0 auto;
         }
 
+        .company-name {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: shimmer 3s ease infinite;
+            margin-bottom: 0.5rem;
+        }
+
+        .company-reg {
+            color: var(--gold-dim);
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 2.5rem;
+            opacity: 0.7;
+        }
+
         .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
-            margin-top: 3rem;
+            gap: 1.2rem;
+            margin-top: 1rem;
         }
 
         .contact-item {
@@ -393,16 +416,13 @@
             justify-content: center;
             gap: 1rem;
             color: var(--gray);
-            flex-wrap: nowrap;
-        }
-        
-        .contact-item span:last-child {
-            white-space: nowrap;
         }
 
         .contact-item span {
             color: var(--gold);
             font-weight: 600;
+            min-width: 5rem;
+            text-align: right;
         }
 
         .contact-item a {
@@ -563,17 +583,15 @@
                 <p>Partner with BLAZEDRAGON UNION for partnership opportunities, business inquiries, or publishing proposals.</p>
             </div>
             <div class="contact-content reveal">
+                <div class="company-name">BLAZEDRAGON UNION</div>
+                <p class="company-reg">BLAZEDRAGON UNION INTERACTIVE ENTERTAINMENT LIMITED</p>
                 <div class="contact-info">
                     <div class="contact-item">
-                        <span>Corporate Identity:</span>
-                        <span>BLAZEDRAGON UNION INTERACTIVE ENTERTAINMENT LIMITED</span>
-                    </div>
-                    <div class="contact-item">
-                        <span>Email:</span>
+                        <span>Email</span>
                         <a href="mailto:liux96051@gmail.com">liux96051@gmail.com</a>
                     </div>
                     <div class="contact-item">
-                        <span>Location:</span>
+                        <span>Location</span>
                         <span>Hong Kong SAR</span>
                     </div>
                 </div>
@@ -583,7 +601,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 BLAZEDRAGON UNION INTERACTIVE ENTERTAINMENT LIMITED. All rights reserved.</p>
+        <p>&copy; 2026 BLAZEDRAGON UNION. All rights reserved.</p>
     </footer>
 
     <!-- Scroll Reveal Script -->
