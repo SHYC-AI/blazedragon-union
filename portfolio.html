@@ -135,6 +135,12 @@
             transform: translateY(-5px);
         }
 
+        .portfolio-image {
+            padding: 1.5rem 2rem 0;
+            display: flex;
+            align-items: center;
+        }
+
         .portfolio-info {
             padding: 2rem;
         }
@@ -201,6 +207,17 @@
             padding: 3rem 5%;
             text-align: center;
             border-top: 1px solid var(--gray-dark);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-icon svg {
+            width: 100%;
+            height: 100%;
         }
 
         footer p { color: var(--gray); font-size: 0.9rem; }
@@ -284,7 +301,17 @@
         </div>
         <div class="portfolio-grid">
             <div class="portfolio-card">
-                <div class="portfolio-image">📰</div>
+                <div class="portfolio-image">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="6" y="8" width="36" height="32" rx="3" stroke="#D4AF37" stroke-width="2"/>
+                            <line x1="12" y1="16" x2="36" y2="16" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="12" y1="22" x2="30" y2="22" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="12" y1="28" x2="33" y2="28" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="12" y1="34" x2="24" y2="34" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
                 <div class="portfolio-info">
                     <h3>Zinetimes</h3>
                     <span class="tag">News & Media</span>
@@ -292,7 +319,18 @@
                 </div>
             </div>
             <div class="portfolio-card">
-                <div class="portfolio-image">📲</div>
+                <div class="portfolio-image">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="10" y="6" width="28" height="36" rx="4" stroke="#D4AF37" stroke-width="2"/>
+                            <circle cx="24" cy="36" r="3" stroke="#D4AF37" stroke-width="2"/>
+                            <line x1="18" y1="12" x2="30" y2="12" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="18" y1="18" x2="26" y2="18" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="18" y1="24" x2="30" y2="24" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="18" y1="30" x2="24" y2="30" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
                 <div class="portfolio-info">
                     <h3>APKSeeks</h3>
                     <span class="tag">App Discovery</span>
@@ -300,7 +338,22 @@
                 </div>
             </div>
             <div class="portfolio-card">
-                <div class="portfolio-image">🤖</div>
+                <div class="portfolio-image">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="24" cy="24" r="10" stroke="#D4AF37" stroke-width="2"/>
+                            <circle cx="24" cy="24" r="4" fill="#D4AF37" opacity="0.3"/>
+                            <line x1="24" y1="4" x2="24" y2="12" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="24" y1="36" x2="24" y2="44" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="4" y1="24" x2="12" y2="24" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="36" y1="24" x2="44" y2="24" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="9.86" y1="9.86" x2="15.52" y2="15.52" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="32.48" y1="32.48" x2="38.14" y2="38.14" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="38.14" y1="9.86" x2="32.48" y2="15.52" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <line x1="15.52" y1="32.48" x2="9.86" y2="38.14" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
                 <div class="portfolio-info">
                     <h3>AIHubly</h3>
                     <span class="tag">AI & Tech</span>
@@ -308,7 +361,19 @@
                 </div>
             </div>
             <div class="portfolio-card">
-                <div class="portfolio-image">💼</div>
+                <div class="portfolio-image">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="8" y="14" width="32" height="24" rx="2" stroke="#D4AF37" stroke-width="2"/>
+                            <path d="M8 20h32" stroke="#D4AF37" stroke-width="2"/>
+                            <path d="M16 8v6" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M32 8v6" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M16 8c0 2.21 3.58 4 8 4s8-1.79 8-4" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="24" cy="29" r="3" stroke="#D4AF37" stroke-width="1.5"/>
+                            <path d="M21 35l3 3 3-3" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                </div>
                 <div class="portfolio-info">
                     <h3>EduJobly</h3>
                     <span class="tag">Education</span>
@@ -316,7 +381,16 @@
                 </div>
             </div>
             <div class="portfolio-card">
-                <div class="portfolio-image">🌿</div>
+                <div class="portfolio-image">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M24 42c0 0-16-8-16-24C8 10 14 4 24 4s16 6 16 14c0 16-16 24-16 24z" stroke="#D4AF37" stroke-width="2" stroke-linejoin="round"/>
+                            <path d="M24 42V18" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M24 30c-4-2-6-6-5-10" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M24 24c4-2 7-5 7-9" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
                 <div class="portfolio-info">
                     <h3>Green9Hub</h3>
                     <span class="tag">Lifestyle</span>
@@ -324,7 +398,24 @@
                 </div>
             </div>
             <div class="portfolio-card">
-                <div class="portfolio-image">🎮</div>
+                <div class="portfolio-image">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="6" y="12" width="36" height="20" rx="4" stroke="#D4AF37" stroke-width="2"/>
+                            <circle cx="16" cy="22" r="4" stroke="#D4AF37" stroke-width="1.5"/>
+                            <path d="M13 22h6" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M16 19v6" stroke="#D4AF37" stroke-width="1.5" stroke-linecap="round"/>
+                            <rect x="26" y="18" width="4" height="4" rx="1" stroke="#D4AF37" stroke-width="1.5"/>
+                            <rect x="32" y="18" width="4" height="4" rx="1" stroke="#D4AF37" stroke-width="1.5"/>
+                            <rect x="26" y="24" width="4" height="4" rx="1" stroke="#D4AF37" stroke-width="1.5"/>
+                            <rect x="32" y="24" width="4" height="4" rx="1" stroke="#D4AF37" stroke-width="1.5"/>
+                            <path d="M14 38v4" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M34 38v4" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M10 38h4" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M34 38h4" stroke="#D4AF37" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
                 <div class="portfolio-info">
                     <h3>TT9Joy</h3>
                     <span class="tag">Entertainment</span>
