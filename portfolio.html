@@ -3,219 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | BLAZEDRAGON UNION</title>
+    <title>Portfolio — BlazeDragon Union</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gold: #D4AF37;
-            --gold-light: #F4D03F;
-            --gold-dark: #B8860B;
-            --black: #0A0A0A;
-            --black-light: #111111;
-            --black-lighter: #1A1A1A;
-            --white: #FFFFFF;
+            --black: #0a0a0a;
+            --black-lighter: #111111;
+            --gray-dark: #1a1a1a;
             --gray: #888888;
-            --gray-dark: #444444;
+            --gold: #D4AF37;
+            --gold-dim: rgba(212,175,55,0.5);
+            --white: #ffffff;
         }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Rajdhani', sans-serif;
             background: var(--black);
             color: var(--white);
-            line-height: 1.7;
+            line-height: 1.6;
         }
 
+        /* NAV */
         nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            padding: 1.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: linear-gradient(to bottom, rgba(10,10,10,0.95), transparent);
-            backdrop-filter: blur(10px);
+            padding: 1.5rem 3rem;
+            border-bottom: 1px solid var(--gray-dark);
         }
-
         .logo {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 700;
             color: var(--gold);
             text-decoration: none;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
         }
-
         .nav-links {
             display: flex;
-            gap: 2.5rem;
             list-style: none;
+            gap: 2.5rem;
         }
-
         .nav-links a {
             color: var(--gray);
             text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            text-transform: uppercase;
+            font-size: 0.9rem;
+            font-weight: 600;
             letter-spacing: 1px;
-            transition: color 0.3s ease;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--gold);
         }
 
-        .nav-links a:hover { color: var(--gold); }
-        .nav-links a.active { color: var(--gold); }
-
+        /* PAGE HEADER */
         .page-header {
-            padding: 10rem 5% 4rem;
-            background: var(--black-light);
-            border-bottom: 1px solid var(--gray-dark);
             text-align: center;
+            padding: 5rem 2rem 3rem;
         }
-
         .page-header h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: clamp(2rem, 5vw, 3rem);
+            font-size: 2.8rem;
+            font-weight: 700;
             color: var(--white);
+            letter-spacing: 4px;
             margin-bottom: 1rem;
         }
-
         .page-header p {
             color: var(--gray);
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .portfolio-section {
-            padding: 5rem 5%;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 600;
-            color: var(--gold);
-            margin-bottom: 1rem;
-        }
-
-        .section-title p {
-            color: var(--gray);
+            font-size: 1.05rem;
             max-width: 600px;
             margin: 0 auto;
         }
 
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+        /* PORTFOLIO SECTION */
+        .portfolio-section {
+            padding: 0 2rem 6rem;
             max-width: 1200px;
             margin: 0 auto;
         }
 
+        .section-group {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid var(--gray-dark);
+        }
+        .section-title h2 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--gold);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+        .section-title p {
+            color: var(--gray);
+            font-size: 0.95rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* GRID */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* CARD */
         .portfolio-card {
             background: var(--black-lighter);
             border: 1px solid var(--gray-dark);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: all 0.4s ease;
+            border-radius: 8px;
+            padding: 1.8rem 2rem;
+            transition: border-color 0.3s, transform 0.3s;
         }
-
         .portfolio-card:hover {
             border-color: var(--gold);
-            transform: translateY(-5px);
+            transform: translateY(-3px);
         }
-
-
-        .portfolio-info {
-            padding: 2rem;
-        }
-
-        .portfolio-info h3 {
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1.3rem;
-            font-weight: 600;
+        .portfolio-card h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
             color: var(--white);
             margin-bottom: 0.5rem;
         }
-
-        .portfolio-info .tag {
-            display: inline-block;
-            background: rgba(212,175,55,0.2);
-            color: var(--gold);
-            padding: 0.25rem 0.75rem;
-            border-radius: 4px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-        }
-
-        .portfolio-info p {
+        .portfolio-card p {
             color: var(--gray);
             font-size: 0.9rem;
         }
 
-        .mobile-icon {
-            display: block;
-            width: 24px;
-            height: 32px;
-            margin-bottom: 0.75rem;
-            opacity: 0.65;
-        }
-
-        .mobile-icon svg {
-            width: 100%;
-            height: 100%;
-        }
-
+        /* DIVIDER */
         .divider {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 5%;
+            text-align: center;
+            margin: 4rem 0;
+            position: relative;
         }
-
         .divider hr {
             border: none;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gray-dark), transparent);
-        }
-
-        .divider-text {
-            text-align: center;
-            padding: 2rem 0;
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 1.5rem;
-            color: var(--gold);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.2em;
-        }
-
-        footer {
-            background: var(--black);
-            padding: 3rem 5%;
-            text-align: center;
             border-top: 1px solid var(--gray-dark);
         }
+        .divider-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: var(--black);
+            padding: 0 1.5rem;
+            color: var(--gold);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
 
+        /* FOOTER NOTE */
+        .footer-note {
+            text-align: center;
+            color: var(--gray);
+            font-size: 0.85rem;
+            padding: 2rem;
+            border-top: 1px solid var(--gray-dark);
+            margin-top: 2rem;
+        }
 
-        footer p { color: var(--gray); font-size: 0.9rem; }
-        footer a { color: var(--gold); text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid var(--gray-dark);
+            color: var(--gray);
+            font-size: 0.8rem;
+        }
+
+        /* REVEAL ANIMATION */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; }
+            nav {
+                padding: 1rem 1.5rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -226,192 +218,101 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="solutions.html">Solutions</a></li>
             <li><a href="portfolio.html" class="active">Portfolio</a></li>
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-of-service.html">Terms of Service</a></li>
+            <li><a href="terms-of-service.html">Legal</a></li>
+            <li><a href="privacy-policy.html">Privacy</a></li>
         </ul>
     </nav>
 
     <header class="page-header">
-        <h1>Our Portfolio</h1>
-        <p>Explore our ecosystem of digital platforms and mobile applications</p>
+        <h1>PORTFOLIO</h1>
+        <p>Explore our ecosystem of digital platforms and mobile applications.</p>
     </header>
 
     <section class="portfolio-section">
         <!-- Mobile Applications -->
-        <div class="section-title">
-            <h2>Mobile Applications</h2>
-            <p>Our mobile division focuses on utility, health, and entertainment, delivering intuitive solutions to users worldwide.</p>
-        </div>
-                <div class="portfolio-grid">
-            <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="12" y="2" width="12" height="24" rx="3" stroke="#D4AF37" stroke-width="1.5"/>
-                            <circle cx="18" cy="30" r="2" fill="#D4AF37"/>
-                            <rect x="8" y="32" width="20" height="2" rx="1" stroke="#D4AF37" stroke-width="1.5"/>
-                        </svg>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>SparkShort</h3>
-                        <span class="tag">Entertainment</span>
-                        <p>A premium platform for immersive short-form dramas and digital storytelling.</p>
-                    </div>
+        <div class="section-group">
+            <div class="section-title">
+                <h2>Mobile Applications</h2>
+                <p>Our mobile division focuses on utility, health, and entertainment, delivering intuitive solutions to users worldwide.</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card reveal">
+                    <h3>SparkShort</h3>
+                    <p>A premium platform for immersive short-form dramas and digital storytelling.</p>
                 </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="12" y="2" width="12" height="24" rx="3" stroke="#D4AF37" stroke-width="1.5"/>
-                            <circle cx="18" cy="30" r="2" fill="#D4AF37"/>
-                            <rect x="8" y="32" width="20" height="2" rx="1" stroke="#D4AF37" stroke-width="1.5"/>
-                        </svg>
-                    </div>
-                <div class="portfolio-info">
-<h3>Plant Genie</h3>
-                    <span class="tag">Lifestyle</span>
+                <div class="portfolio-card reveal">
+                    <h3>Plant Genie</h3>
                     <p>An advanced AI-powered identifier for botanical enthusiasts.</p>
-            </div>
-            <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="12" y="2" width="12" height="24" rx="3" stroke="#D4AF37" stroke-width="1.5"/>
-                            <circle cx="18" cy="30" r="2" fill="#D4AF37"/>
-                            <rect x="8" y="32" width="20" height="2" rx="1" stroke="#D4AF37" stroke-width="1.5"/>
-                        </svg>
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Health Keeper</h3>
-                        <span class="tag">Health</span>
-                        <p>A reliable tool for blood pressure tracking and personal health management.</p>
-                    </div>
                 </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="12" y="2" width="12" height="24" rx="3" stroke="#D4AF37" stroke-width="1.5"/>
-                            <circle cx="18" cy="30" r="2" fill="#D4AF37"/>
-                            <rect x="8" y="32" width="20" height="2" rx="1" stroke="#D4AF37" stroke-width="1.5"/>
-                        </svg>
-                    </div>
-                <div class="portfolio-info">
-<h3>Panda PDF</h3>
-                    <span class="tag">Productivity</span>
+                <div class="portfolio-card reveal">
+                    <h3>Health Keeper</h3>
+                    <p>A reliable tool for blood pressure tracking and personal health management.</p>
+                </div>
+                <div class="portfolio-card reveal">
+                    <h3>Panda PDF</h3>
                     <p>A comprehensive professional suite for PDF reading and document editing.</p>
-            </div>
-            <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="12" y="2" width="12" height="24" rx="3" stroke="#D4AF37" stroke-width="1.5"/>
-                            <circle cx="18" cy="30" r="2" fill="#D4AF37"/>
-                            <rect x="8" y="32" width="20" height="2" rx="1" stroke="#D4AF37" stroke-width="1.5"/>
-                        </svg>
-                    </div>
-                <div class="portfolio-info">
-<h3>Aimakify</h3>
-                    <span class="tag">Beauty</span>
+                </div>
+                <div class="portfolio-card reveal">
+                    <h3>Aimakify</h3>
                     <p>Innovative AI-driven makeup and beauty editor for creative self-expression.</p>
+                </div>
             </div>
         </div>
 
+        <!-- Divider -->
         <div class="divider">
             <hr>
-            <div class="divider-text">Digital Media & Web Networks</div>
+            <span class="divider-text">Digital Media &amp; Web Networks</span>
         </div>
 
         <!-- Digital Media & Web Networks -->
-        <div class="section-title">
-            <h2>Digital Media &amp; Web Networks</h2>
-            <p>We operate a diverse network of high-traffic web properties across multiple niches, from utility discovery to specialized information hubs.</p>
-        </div>
-        <div class="portfolio-grid">
-            <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="4" y="12" width="28" height="18" rx="2" stroke="#D4AF37" stroke-width="1.5"/>
-                            <line x1="4" y1="18" x2="32" y2="18" stroke="#D4AF37" stroke-width="1.5"/>
-                            <rect x="12" y="8" width="12" height="4" rx="1" stroke="#D4AF37" stroke-width="1"/>
-                        </svg>
-                    </div>
-                <div class="portfolio-info">
+        <div class="section-group">
+            <div class="section-title">
+                <h2>Digital Media &amp; Web Networks</h2>
+                <p>We operate a diverse network of high-traffic web properties across multiple niches, from utility discovery to specialized information hubs.</p>
+            </div>
+            <div class="portfolio-grid">
+                <div class="portfolio-card reveal">
                     <h3>Zinetimes</h3>
-                    <span class="tag">News & Media</span>
                     <p>The leading destination for verified discount discovery in the Japanese retail sector.</p>
                 </div>
-            </div>
-            <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="4" y="12" width="28" height="18" rx="2" stroke="#D4AF37" stroke-width="1.5"/>
-                            <line x1="4" y1="18" x2="32" y2="18" stroke="#D4AF37" stroke-width="1.5"/>
-                            <rect x="12" y="8" width="12" height="4" rx="1" stroke="#D4AF37" stroke-width="1"/>
-                        </svg>
-                    </div>
-                <div class="portfolio-info">
+                <div class="portfolio-card reveal">
                     <h3>APKSeeks</h3>
-                    <span class="tag">App Discovery</span>
                     <p>A curated platform for premium mobile customization and digital asset discovery.</p>
                 </div>
-            </div>
-            <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="4" y="12" width="28" height="18" rx="2" stroke="#D4AF37" stroke-width="1.5"/>
-                            <line x1="4" y1="18" x2="32" y2="18" stroke="#D4AF37" stroke-width="1.5"/>
-                            <rect x="12" y="8" width="12" height="4" rx="1" stroke="#D4AF37" stroke-width="1"/>
-                        </svg>
-                    </div>
-                <div class="portfolio-info">
+                <div class="portfolio-card reveal">
                     <h3>AIHubly</h3>
-                    <span class="tag">AI & Tech</span>
                     <p>A dedicated resource for the latest in artificial intelligence tools and innovations.</p>
                 </div>
-            </div>
-            <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="4" y="12" width="28" height="18" rx="2" stroke="#D4AF37" stroke-width="1.5"/>
-                            <line x1="4" y1="18" x2="32" y2="18" stroke="#D4AF37" stroke-width="1.5"/>
-                            <rect x="12" y="8" width="12" height="4" rx="1" stroke="#D4AF37" stroke-width="1"/>
-                        </svg>
-                    </div>
-                <div class="portfolio-info">
+                <div class="portfolio-card reveal">
                     <h3>EduJobly</h3>
-                    <span class="tag">Education</span>
                     <p>Empowering career growth through specialized educational and professional resources.</p>
                 </div>
-            </div>
-            <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="4" y="12" width="28" height="18" rx="2" stroke="#D4AF37" stroke-width="1.5"/>
-                            <line x1="4" y1="18" x2="32" y2="18" stroke="#D4AF37" stroke-width="1.5"/>
-                            <rect x="12" y="8" width="12" height="4" rx="1" stroke="#D4AF37" stroke-width="1"/>
-                        </svg>
-                    </div>
-                <div class="portfolio-info">
-                    <h3>Green9Hub</h3>
-                    <span class="tag">Lifestyle</span>
-                    <p>Niche lifestyle portal serving global communities with sustainable living content.</p>
-                </div>
-            </div>
-            <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="4" y="12" width="28" height="18" rx="2" stroke="#D4AF37" stroke-width="1.5"/>
-                            <line x1="4" y1="18" x2="32" y2="18" stroke="#D4AF37" stroke-width="1.5"/>
-                            <rect x="12" y="8" width="12" height="4" rx="1" stroke="#D4AF37" stroke-width="1"/>
-                        </svg>
-                    </div>
-                <div class="portfolio-info">
-                    <h3>TT9Joy</h3>
-                    <span class="tag">Entertainment</span>
-                    <p>Niche entertainment portal for gaming and digital lifestyle content.</p>
+                <div class="portfolio-card reveal">
+                    <h3>Green9Hub &amp; TT9Joy</h3>
+                    <p>Niche lifestyle and entertainment portals serving global communities.</p>
                 </div>
             </div>
         </div>
 
-        
+        <div class="footer-note">
+            Additional proprietary websites are operated by our team for specific regional markets.
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2026 <a href="index.html">BLAZEDRAGON UNION</a>. All rights reserved.</p>
+        &copy; 2024 BlazeDragon Union. All rights reserved.
     </footer>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
